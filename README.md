@@ -1,13 +1,10 @@
-# 📦 Streamlit App Starter Kit 
-```
-⬆️ (Replace above with your app's name)
-```
+# 💳 Credit risk Checker App
 
-Description of the app ...
+This is an app that lets the user add in his/her credentials and get a probability of loan default. 
 
 ## Demo App
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://app-starter-kit.streamlit.app/)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://creditriskcheck.streamlit.app/)
 
 ## GitHub Codespaces
 
