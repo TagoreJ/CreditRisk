@@ -190,7 +190,7 @@ with st.sidebar:
     Attribute5 = st.number_input("Credit Amount (in GBP)")
     Attribute6 = st.selectbox('Balance in Savings account / Bonds', ('Less than £1000', 'Between £1000 and £5000', 'Between £5000 and £10000', 'Greater than £10000'))
     Attribute7 = st.selectbox('Present Employment Since', ('Unemployed', '< 1 year', '< 4 years and >= 1 year', '< 7 years and >= 4 years', 'more than 7 years'))
-    Attribute8 = st.slider('Installment rate in percentage to disposable income', 0, 4)
+    Attribute8 = st.number_input('Instalelment rate in percentage to disposable income', value=0)
     Attribute9 = st.selectbox('Personal status and Sex', ('Male - divorced/separated', 'Female - divorced/separated/married', 'Male - single', 'Male - married/widowed', 'Female - single'))
     Attribute10 = st.selectbox('Other debtors/guarantors', ('None', 'Co-applicant', 'Guarantor'))
     Attribute11 = st.number_input('Present residence since', 0, 4)
