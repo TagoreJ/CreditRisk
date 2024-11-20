@@ -126,8 +126,8 @@ def get_probability(credentials_df):
             train_pred = (outputs > 0.5).float()
             train_accuracy = (train_pred == y_tensor).sum().item() / y_tensor.size(0) * 100
             train_accuracies.append(train_accuracy)
-    
     my_bar.empty()
+    
     credentials_df['Attribute1'].replace({'A11': 1, 'A12': 2, 'A14': 3, 'A13': 4}, inplace=True)
     credentials_df['Attribute3'].replace({'A34': 5, 'A32': 3, 'A33': 4, 'A30': 1, 'A31': 2}, inplace=True)
     credentials_df['Attribute4'].replace({'A40': 1, 'A41': 2, 'A42': 3, 'A43': 4, 'A44': 5, 'A45': 6, 'A46': 7, 'A47': 8, 'A48': 9, 'A49': 10, 'A410': 11}, inplace=True)
