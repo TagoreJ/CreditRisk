@@ -413,13 +413,13 @@ if st.button('Build profile'):
     gMode='gauge+number', # Display mode ('gauge+number', 'gauge', 'number')
     gSize="MED",         # Size of the gauge visualization
     gTheme="Black",       # Theme color for text and gauge labels
-    grLow=30,            # Low threshold for range
-    grMid=70,            # Mid threshold for range
+    grLow=0.3,            # Low threshold for range
+    grMid=0.7,            # Mid threshold for range
     gcLow='#1B8720',      # Color for low range
     gcMid='#FF9400',      # Color for mid range
     gcHigh='#FF1708',     # Color for high range
     arBot=0,              # Minimum value on the gauge
-    arTop=100,              # Maximum value on the gauge
+    arTop=1,              # Maximum value on the gauge
     sFix="%",             # Suffix to append to the value (e.g., '%')
 )
 
