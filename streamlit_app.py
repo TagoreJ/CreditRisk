@@ -32,7 +32,7 @@ plt.show()
 
 
 def get_probability(credentials_df):
-    print('downloading test data')
+    st.write('downloading test data')
  
 # Fetch dataset 
     statlog_german_credit_data = fetch_ucirepo(id=144) 
@@ -40,7 +40,7 @@ def get_probability(credentials_df):
     # Data (as pandas dataframes) 
     features = statlog_german_credit_data.data.features 
     targets = statlog_german_credit_data.data.targets -1
-    print('test data downloaded, preprocessing...')
+    st.write('test data downloaded, preprocessing...')
 
 
     df = pd.DataFrame(features)
@@ -82,7 +82,7 @@ def get_probability(credentials_df):
     y_tensor = torch.tensor(y_resampled.values, dtype=torch.float32)
 
     # Define the Classifier class
-    print('data processed, training data...')
+    st.write('data processed, training data...')
     
     class Classifier(nn.Module):
         def __init__(self):
@@ -125,7 +125,7 @@ def get_probability(credentials_df):
             train_pred = (outputs > 0.5).float()
             train_accuracy = (train_pred == y_tensor).sum().item() / y_tensor.size(0) * 100
             train_accuracies.append(train_accuracy)
-    print('training successful, loaded user credentials...')
+    st.write('training successful, loaded user credentials...')
     
 
     credentials_df['Attribute1'].replace({'A11': 1, 'A12': 2, 'A14': 3, 'A13': 4}, inplace=True)
