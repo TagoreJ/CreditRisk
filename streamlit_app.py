@@ -180,6 +180,7 @@ my_credentials = {
 
 my_credentials_df = pd.DataFrame(my_credentials)
 
-prob = get_probability(my_credentials_df)
 
-st.write(f'probability of default is {prob} %')
+with st.sidebar:
+    st.header('Input Features')
+    status = st.selectbox('Status of existing checking account', ('less than 0', 'between 0 and £150', 'greater than £150', 'no existing checking account')  )
