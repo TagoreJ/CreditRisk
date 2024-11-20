@@ -222,5 +222,5 @@ with st.sidebar:
 
 if st.button('Build profile'):
     prob = get_probability(input_df)
-    st.write(f'Your probability of default is {prob} %')
+    st.write(f'Your probability of default is {prob:.1f} %')
    
