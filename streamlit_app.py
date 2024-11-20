@@ -421,6 +421,19 @@ if st.button('Build profile'):
     sFix="%",             # Suffix to append to the value (e.g., '%')
 )
 
+    st.divider()
+
+    if prob <= 10:
+        st.write_stream('The predicted credit default risk is very low, indicating a highly trustworthy financial profile. This borrower demonstrates consistent financial behavior and stability, making them an excellent candidate for credit approvals with favorable terms.')
+    elif prob >10 and prob<=30:
+        st.write_stream('The predicted credit default risk is low, suggesting that the borrower has a strong ability to meet their financial obligations. While there may be a few minor concerns, they generally pose a low likelihood of default.')
+    elif prob > 30 and prob <= 70:
+        st.write_stream('The predicted credit default risk is moderate, indicating a balanced credit profile. While there are some notable risk factors, the borrower has the potential to manage their financial obligations with appropriate measures.')
+    elif prob > 70 and prob <= 90:
+        st.write_stream('The predicted credit default risk is high, highlighting notable financial challenges. There are several risk indicators that increase the probability of default, suggesting the need for caution and potential risk mitigation strategies.')
+    elif prob>90:
+        st.write_stream('The predicted credit default risk is very high, signaling a highly vulnerable financial profile. The borrower demonstrates severe risk factors that make credit extension highly inadvisable without substantial safeguards.')
+        
 
     
 
