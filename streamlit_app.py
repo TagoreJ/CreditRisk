@@ -224,4 +224,13 @@ with st.sidebar:
 if st.button('Build profile'):
     prob = get_probability(input_df)
     st.write(f'Your probability of default is {prob:.1f} %')
+
+    fig = go.Figure(go.Indicator(
+    mode = "gauge+number",
+    value = 450,
+    title = {'text': "Speed"},
+    domain = {'x': [0, 1], 'y': [0, 1]}
+))
+
+    st.plotly_chart(fig, use_container_width=True)
    
