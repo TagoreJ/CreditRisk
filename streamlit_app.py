@@ -198,7 +198,7 @@ with st.sidebar:
     Attribute13 = st.number_input("Age (in years)")
     Attribute14 = st.selectbox('Other Installment plans', ('Bank', 'Stores', 'None'))
     Attribute15 = st.selectbox('Current housing', ('Rent', 'Own', 'other'))
-    Attribute16 = st.slider('Number of existing credits in this bank', 0, 4, 0.5)
+    Attribute16 = st.slider('Number of existing credits in this bank', 0, 4)
     Attribute17 = st.selectbox('Skill level', ('unemployed/ unskilled  - non-resident', 'unskilled - resident', 'skilled employee / official', 'management/ self-employed/highly qualified employee/ officer'))
     Attribute18 = st.slider('Dependents', 0, 2)
     Attribute19 = st.selectbox('Telephone', ('Yes', 'No'))
