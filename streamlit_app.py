@@ -1,5 +1,5 @@
 import streamlit as st
 
-st.title('🎈 App Name')
+st.title('💳 Credit risk checker')
 
-st.write('Hello world!')
+st.info('This program uses machine learning to check for credit risk')
