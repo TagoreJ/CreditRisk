@@ -4,7 +4,7 @@ st.title('💳 Credit risk checker')
 
 st.info('👈 Please fill your profile in the sidebar')
 
-from ucimlrepo import fetch_ucirepo
+from ucimlrepo import fetch_ucirepo 
 import pandas as pd
 import numpy as np
 import torch
