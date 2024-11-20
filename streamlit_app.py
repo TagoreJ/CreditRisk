@@ -83,6 +83,9 @@ def get_probability(credentials_df):
 
     # Define the Classifier class
     st.write('data processed, training data...')
+    progress_text = 'Training Data...'
+    my_bar = st.progress(0, text=progress_text)
+    
     class Classifier(nn.Module):
         def __init__(self):
             super().__init__()
@@ -109,6 +112,7 @@ def get_probability(credentials_df):
     train_accuracies = []
 
     for e in range(epochs):
+        my_bar.progress(e+20, text=progress_text)
         model.train()
         optimizer.zero_grad()
         outputs = model(X_tensor).squeeze()
