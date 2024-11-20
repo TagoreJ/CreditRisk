@@ -32,54 +32,54 @@ plt.show()
 
 
 def get_probability(credentials_df):
-    st.write('downloading test data')
+    with st.spinner('downloading test data')
  
 # Fetch dataset 
-    statlog_german_credit_data = fetch_ucirepo(id=144) 
+        statlog_german_credit_data = fetch_ucirepo(id=144) 
+        
+        # Data (as pandas dataframes) 
+        features = statlog_german_credit_data.data.features 
+        targets = statlog_german_credit_data.data.targets -1
+    with st.spinner('test data downloaded, preprocessing...')
+
+
+        df = pd.DataFrame(features)
+        df['Attribute1'].replace({'A11': 1, 'A12': 2, 'A14': 3, 'A13': 4}, inplace=True)
+        df['Attribute3'].replace({'A34': 5, 'A32': 3, 'A33': 4, 'A30': 1, 'A31': 2}, inplace=True)
+        df['Attribute4'].replace({'A40': 1, 'A41': 2, 'A42': 3, 'A43': 4, 'A44': 5, 'A45': 6, 'A46': 7, 'A47': 8, 'A48': 9, 'A49': 10, 'A410': 11}, inplace=True)
+        df['Attribute6'].replace({'A61': 1, 'A62': 2, 'A63': 3, 'A64': 4, 'A65': 5}, inplace=True)
+        df['Attribute7'].replace({'A71': 1, 'A72': 2, 'A73': 3, 'A74': 4, 'A75': 5}, inplace=True)
+        df['Attribute9'].replace({'A91': 1, 'A92': 2, 'A93': 3, 'A94': 4}, inplace=True)
+        df['Attribute10'].replace({'A101': 1, 'A102': 2, 'A103': 3}, inplace=True)
+        df['Attribute12'].replace({'A121': 1, 'A122': 2, 'A123': 3, 'A124': 4}, inplace=True)
+        df['Attribute14'].replace({'A141': 1, 'A142': 2, 'A143': 3}, inplace=True)
+        df['Attribute15'].replace({'A151': 1, 'A152': 2, 'A153': 3}, inplace=True)
+        df['Attribute17'].replace({'A171': 1, 'A172': 2, 'A173': 3, 'A174': 4}, inplace=True)
+        df['Attribute19'].replace({'A191': 0, 'A192': 1}, inplace=True)
+        df['Attribute20'].replace({'A201': 0, 'A202': 1}, inplace=True)
     
-    # Data (as pandas dataframes) 
-    features = statlog_german_credit_data.data.features 
-    targets = statlog_german_credit_data.data.targets -1
-    st.write('test data downloaded, preprocessing...')
-
-
-    df = pd.DataFrame(features)
-    df['Attribute1'].replace({'A11': 1, 'A12': 2, 'A14': 3, 'A13': 4}, inplace=True)
-    df['Attribute3'].replace({'A34': 5, 'A32': 3, 'A33': 4, 'A30': 1, 'A31': 2}, inplace=True)
-    df['Attribute4'].replace({'A40': 1, 'A41': 2, 'A42': 3, 'A43': 4, 'A44': 5, 'A45': 6, 'A46': 7, 'A47': 8, 'A48': 9, 'A49': 10, 'A410': 11}, inplace=True)
-    df['Attribute6'].replace({'A61': 1, 'A62': 2, 'A63': 3, 'A64': 4, 'A65': 5}, inplace=True)
-    df['Attribute7'].replace({'A71': 1, 'A72': 2, 'A73': 3, 'A74': 4, 'A75': 5}, inplace=True)
-    df['Attribute9'].replace({'A91': 1, 'A92': 2, 'A93': 3, 'A94': 4}, inplace=True)
-    df['Attribute10'].replace({'A101': 1, 'A102': 2, 'A103': 3}, inplace=True)
-    df['Attribute12'].replace({'A121': 1, 'A122': 2, 'A123': 3, 'A124': 4}, inplace=True)
-    df['Attribute14'].replace({'A141': 1, 'A142': 2, 'A143': 3}, inplace=True)
-    df['Attribute15'].replace({'A151': 1, 'A152': 2, 'A153': 3}, inplace=True)
-    df['Attribute17'].replace({'A171': 1, 'A172': 2, 'A173': 3, 'A174': 4}, inplace=True)
-    df['Attribute19'].replace({'A191': 0, 'A192': 1}, inplace=True)
-    df['Attribute20'].replace({'A201': 0, 'A202': 1}, inplace=True)
-
-    df_combined = pd.concat([features, targets], axis=1)
-
-
-    # Apply the function to remove outliers
-    df_cleaned = df_combined
-
-    # Separate features and targets
-    X = df_cleaned.drop(columns=['class'])
-    y = df_cleaned['class']
-
-    # Scale the features
-    scaler = StandardScaler()
-    X_scaled = scaler.fit_transform(X)
-
-    # Handle class imbalance using SMOTE
-    # Handle class imbalance using SMOTE
-    smote = SMOTE(random_state=42)
-    X_resampled, y_resampled = smote.fit_resample(X_scaled, y)
-
-    # Convert the entire dataset to PyTorch tensors
-    X_tensor = torch.tensor(X_resampled, dtype=torch.float32)
-    y_tensor = torch.tensor(y_resampled.values, dtype=torch.float32)
+        df_combined = pd.concat([features, targets], axis=1)
+    
+    
+        # Apply the function to remove outliers
+        df_cleaned = df_combined
+    
+        # Separate features and targets
+        X = df_cleaned.drop(columns=['class'])
+        y = df_cleaned['class']
+    
+        # Scale the features
+        scaler = StandardScaler()
+        X_scaled = scaler.fit_transform(X)
+    
+        # Handle class imbalance using SMOTE
+        # Handle class imbalance using SMOTE
+        smote = SMOTE(random_state=42)
+        X_resampled, y_resampled = smote.fit_resample(X_scaled, y)
+    
+        # Convert the entire dataset to PyTorch tensors
+        X_tensor = torch.tensor(X_resampled, dtype=torch.float32)
+        y_tensor = torch.tensor(y_resampled.values, dtype=torch.float32)
 
     # Define the Classifier class
     st.write('data processed, training data...')
