@@ -404,7 +404,7 @@ with st.sidebar:
 
 
 if st.button('Build profile'):
-    if prob = None:
+    if prob == None:
         st.warning('⚠️ Please fill out the form in its entirety')
         
     prob = get_probability(input_df)
