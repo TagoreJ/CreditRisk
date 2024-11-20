@@ -205,7 +205,7 @@ with st.sidebar:
     Attribute20 = st.selectbox('Foreign Worker', ('Yes', 'No'),index=None, placeholder='Select one...')
 
 input_df = pd.DataFrame({"Attribute1" : [Attribute1], "Attribute2" : [Attribute2], "Attribute3" : [Attribute3], "Attribute4" : [Attribute4], "Attribute5" : [Attribute5], "Attribute6" : [Attribute6], "Attribute7" : [Attribute7], "Attribute8" : [Attribute8], "Attribute9" : [Attribute9], "Attribute10" : [Attribute10], "Attribute11" : [Attribute11], "Attribute12" : [Attribute12], "Attribute13" : [Attribute13], "Attribute14" : [Attribute14], "Attribute15": [Attribute15], "Attribute16" : [Attribute16], "Attribute17" : [Attribute17], "Attribute18" : [Attribute18], "Attribute19" : [Attribute19], "Attribute20" : [Attribute20]})
-input_df['Attribute1'].replace({'A11', 'A12', 'A14', 'A13'}, inplace=True)
+input_df['Attribute1'].replace({'less than £0': 'A11', 'between £0 and £150': 'A12', 'greater than £150': 'A14','no existing checking account': 'A13'}, inplace=True)
 input_df['Attribute3'].replace({'A34', 'A32', 'A33', 'A30', 'A31'}, inplace=True)
 input_df['Attribute4'].replace({'A40', 'A41', 'A42', 'A43', 'A44', 'A45', 'A46', 'A47', 'A48': 9, 'A49', 'A410'}, inplace=True)
 input_df['Attribute6'].replace({'A61', 'A62', 'A63', 'A64', 'A65'}, inplace=True)    
