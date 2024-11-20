@@ -32,8 +32,6 @@ plt.show()
 
 import plotly.graph_objects as go
 
-"""Custom Plotly visualizations for Streamlit"""
-
 __version__ = "5.1"
 def gauge(gVal, gTitle="", gMode='gauge+number', gSize="FULL", gTheme="Black",
           grLow=.29, grMid=.69, gcLow='#FF1708', gcMid='#FF9400', 
