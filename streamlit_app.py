@@ -204,5 +204,5 @@ with st.sidebar:
     Attribute19 = st.selectbox('Telephone', ('Yes', 'No'),index=None, placeholder='Select one...')
     Attribute20 = st.selectbox('Foreign Worker', ('Yes', 'No'),index=None, placeholder='Select one...')
 
-input_df = pd.DataFrame({"Attribute1" : [Attribute1]})
+input_df = pd.DataFrame({"Attribute1" : [Attribute1], "Attribute2" : [Attribute2], "Attribute3" : [Attribute3], "Attribute4" : [Attribute4], "Attribute5" : [Attribute5], "Attribute6" : [Attribute6], "Attribute7" : [Attribute7], "Attribute8" : [Attribute8], "Attribute9" : [Attribute9], "Attribute10" : [Attribute10], "Attribute11" : [Attribute11], "Attribute12" : [Attribute12], "Attribute13" : [Attribute13], "Attribute14" : [Attribute14], "Attribute15: [Attribute15], "Attribute16" : [Attribute16], "Attribute17" : [Attribute17], "Attribute18" : [Attribute18], "Attribute19" : [Attribute19], "Attribute20" : [Attribute20]})
 input_df 
