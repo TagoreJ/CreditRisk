@@ -219,4 +219,9 @@ with st.sidebar:
     input_df['Attribute17'].replace({'unemployed/ unskilled  - non-resident': 'A171', 'unskilled - resident': 'A172', 'skilled employee / official': 'A173', 'management/ self-employed/highly qualified employee/ officer': 'A174'}, inplace=True)
     input_df['Attribute19'].replace({'Yes': 'A192', 'No': 'A191'}, inplace=True)
     input_df['Attribute20'].replace({'Yes': 'A201', 'No': 'A202'}, inplace=True)
+
+
+if st.button('Build profile'):
+    prob = get_probability(input_df)
+    st.write(f'Your probability of default is {prob} %')
    
