@@ -220,10 +220,20 @@ with st.sidebar:
     input_df['Attribute19'].replace({'Yes': 'A192', 'No': 'A191'}, inplace=True)
     input_df['Attribute20'].replace({'Yes': 'A201', 'No': 'A202'}, inplace=True)
 
+import plotly.graph_objects as go
+
+fig = go.Figure(go.Indicator(
+    mode = "gauge+number",
+    value = 15,
+    domain = {'x': [0, 1], 'y': [0, 1]},
+    title = {'text': "Speed"}))
+
 
 if st.button('Build profile'):
     prob = get_probability(input_df)
     st.write(f'Your probability of default is {prob:.1f} %')
+    st.plotly_chart(fig, use_container_width=True)
+
 
     
 
