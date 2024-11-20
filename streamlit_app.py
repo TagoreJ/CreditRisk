@@ -183,4 +183,8 @@ my_credentials_df = pd.DataFrame(my_credentials)
 
 with st.sidebar:
     st.header('Input Features')
-    status = st.selectbox('Status of existing checking account', ('less than 0', 'between 0 and £150', 'greater than £150', 'no existing checking account')  )
+    status = st.selectbox('Status of existing checking account', ('less than £0', 'between £0 and £150', 'greater than £150', 'no existing checking account')  )
+    duration = st.number_input("Credit Duration (in months)")
+    Credit_history = st.selectbox('Credit history', ('No existing (ongoing) credits anywhere', 'No existing (ongoing) credits in current bank', 'Existing credits being paid duly', 'Delay in paying credits in the past', 'Critical Account')
+                                  
+    
