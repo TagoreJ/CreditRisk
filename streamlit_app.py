@@ -2,7 +2,7 @@ import streamlit as st
 
 st.title('💳 Credit risk checker')
 
-st.info('This program uses machine learning to check for credit risk')
+st.info('👈 Please fill your profile in the sidebar')
 
 from ucimlrepo import fetch_ucirepo
 import pandas as pd
@@ -404,6 +404,9 @@ with st.sidebar:
 
 
 if st.button('Build profile'):
+    if prob = None:
+        st.warning('⚠️ Please fill out the form in its entirety')
+        
     prob = get_probability(input_df)
     st.write(f'Your probability of default is {prob:.1f} %')
     gauge(
