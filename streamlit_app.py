@@ -376,7 +376,7 @@ with st.sidebar:
     Attribute10 = st.selectbox('Other debtors/guarantors', ('None', 'Co-applicant', 'Guarantor'),index=None, placeholder='Select one...')
     Attribute11 = st.number_input('Present residence since', 0, 4)
     Attribute12 = st.selectbox('Collateral', ('Real Estate', 'savings agreement/ life insurance', 'Car or other', 'No Collateral'),index=None, placeholder='Select one...')
-    Attribute13 = st.number_input("Age (in years)")
+    Attribute13 = st.slider("Age (in years)", 0, 120)
     Attribute14 = st.selectbox('Other Installment plans', ('Bank', 'Stores', 'None'),index=None, placeholder='Select one...')
     Attribute15 = st.selectbox('Current housing', ('Rent', 'Own', 'other'),index=None, placeholder='Select one...')
     Attribute16 = st.slider('Number of existing credits in this bank', 0, 4)
