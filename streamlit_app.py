@@ -205,4 +205,17 @@ with st.sidebar:
     Attribute20 = st.selectbox('Foreign Worker', ('Yes', 'No'),index=None, placeholder='Select one...')
 
 input_df = pd.DataFrame({"Attribute1" : [Attribute1], "Attribute2" : [Attribute2], "Attribute3" : [Attribute3], "Attribute4" : [Attribute4], "Attribute5" : [Attribute5], "Attribute6" : [Attribute6], "Attribute7" : [Attribute7], "Attribute8" : [Attribute8], "Attribute9" : [Attribute9], "Attribute10" : [Attribute10], "Attribute11" : [Attribute11], "Attribute12" : [Attribute12], "Attribute13" : [Attribute13], "Attribute14" : [Attribute14], "Attribute15": [Attribute15], "Attribute16" : [Attribute16], "Attribute17" : [Attribute17], "Attribute18" : [Attribute18], "Attribute19" : [Attribute19], "Attribute20" : [Attribute20]})
-input_df 
+input_df['Attribute1'].replace({'A11', 'A12', 'A14', 'A13'}, inplace=True)
+input_df['Attribute3'].replace({'A34', 'A32', 'A33', 'A30', 'A31'}, inplace=True)
+input_df['Attribute4'].replace({'A40', 'A41', 'A42', 'A43', 'A44', 'A45', 'A46', 'A47', 'A48': 9, 'A49', 'A410'}, inplace=True)
+input_df['Attribute6'].replace({'A61', 'A62', 'A63', 'A64', 'A65'}, inplace=True)    
+input_df['Attribute7'].replace({'A71', 'A72', 'A73', 'A74', 'A75'}, inplace=True)
+input_df['Attribute9'].replace({'A91', 'A92', 'A93', 'A94'}, inplace=True)
+input_df['Attribute10'].replace({'A101', 'A102', 'A103'}, inplace=True)
+input_df['Attribute12'].replace({'A121', 'A122', 'A123', 'A124'}, inplace=True)
+input_df['Attribute14'].replace({'A141', 'A142', 'A143'}, inplace=True)
+input_df['Attribute15'].replace({'A151', 'A152', 'A153'}, inplace=True)
+input_df['Attribute17'].replace({'A171', 'A172', 'A173', 'A174'}, inplace=True)
+input_df['Attribute19'].replace({'A191', 'A192'}, inplace=True)
+input_df['Attribute20'].replace({'A201', 'A202'}, inplace=True)
+input_df
