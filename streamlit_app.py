@@ -112,7 +112,7 @@ def get_probability(credentials_df):
     train_accuracies = []
 
     for e in range(epochs):
-        my_bar.progress(e+0.0005, text=progress_text)
+        my_bar.progress(e/2000, text=progress_text)
         model.train()
         optimizer.zero_grad()
         outputs = model(X_tensor).squeeze()
