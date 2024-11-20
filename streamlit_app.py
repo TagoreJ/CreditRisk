@@ -32,7 +32,7 @@ plt.show()
 
 
 def get_probability(credentials_df):
-    with st.spinner('downloading test data')
+    with st.spinner('downloading test data'):
  
 # Fetch dataset 
         statlog_german_credit_data = fetch_ucirepo(id=144) 
@@ -40,7 +40,7 @@ def get_probability(credentials_df):
         # Data (as pandas dataframes) 
         features = statlog_german_credit_data.data.features 
         targets = statlog_german_credit_data.data.targets -1
-    with st.spinner('test data downloaded, preprocessing...')
+    with st.spinner('test data downloaded, preprocessing...'):
 
 
         df = pd.DataFrame(features)
