@@ -410,15 +410,14 @@ if st.button('Build profile'):
     st.write(f'Your probability of default is {prob:.1f} %')
     gauge(
     gVal=prob,           # The value to display on the gauge
-    gTitle="Risk", # Title of the gauge
     gMode='gauge+number', # Display mode ('gauge+number', 'gauge', 'number')
-    gSize="FULL",         # Size of the gauge visualization
+    gSize="MED",         # Size of the gauge visualization
     gTheme="Black",       # Theme color for text and gauge labels
     grLow=30,            # Low threshold for range
     grMid=7,            # Mid threshold for range
-    gcLow='#FF1708',      # Color for low range
+    gcLow='#1B8720',      # Color for low range
     gcMid='#FF9400',      # Color for mid range
-    gcHigh='#1B8720',     # Color for high range
+    gcHigh='#FF1708',     # Color for high range
     arBot=0,              # Minimum value on the gauge
     arTop=100,              # Maximum value on the gauge
     sFix="%",             # Suffix to append to the value (e.g., '%')
