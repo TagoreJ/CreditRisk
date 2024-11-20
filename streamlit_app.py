@@ -204,4 +204,5 @@ with st.sidebar:
     Attribute19 = st.selectbox('Telephone', ('Yes', 'No'),index=None, placeholder='Select one...')
     Attribute20 = st.selectbox('Foreign Worker', ('Yes', 'No'),index=None, placeholder='Select one...')
 
-
+input_df = {"Attribute1" : [Attribute1]}
+input_df
