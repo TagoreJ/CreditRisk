@@ -182,4 +182,4 @@ my_credentials_df = pd.DataFrame(my_credentials)
 
 prob = get_probability(my_credentials_df)
 
-print(f'probability of default is {prob} %')
+st.write(f'probability of default is {prob} %')
