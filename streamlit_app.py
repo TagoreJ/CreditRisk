@@ -385,22 +385,22 @@ with st.sidebar:
     Attribute19 = st.selectbox('Telephone', ('Yes', 'No'),index=None, placeholder='Select one...')
     Attribute20 = st.selectbox('Foreign Worker', ('Yes', 'No'),index=None, placeholder='Select one...')
 
-    if st.button('Build profile'):
-        input_df = pd.DataFrame({"Attribute1" : [Attribute1], "Attribute2" : [Attribute2], "Attribute3" : [Attribute3], "Attribute4" : [Attribute4], "Attribute5" : [Attribute5], "Attribute6" : [Attribute6], "Attribute7" : [Attribute7], "Attribute8" : [Attribute8], "Attribute9" : [Attribute9], "Attribute10" : [Attribute10], "Attribute11" : [Attribute11], "Attribute12" : [Attribute12], "Attribute13" : [Attribute13], "Attribute14" : [Attribute14], "Attribute15": [Attribute15], "Attribute16" : [Attribute16], "Attribute17" : [Attribute17], "Attribute18" : [Attribute18], "Attribute19" : [Attribute19], "Attribute20" : [Attribute20]})
-        input_df['Attribute1'].replace({'less than £0': 'A11', 'between £0 and £150': 'A12', 'greater than £150': 'A13','no existing checking account': 'A14'}, inplace=True)
-        input_df['Attribute3'].replace({'No existing (ongoing) credits anywhere': 'A30', 'No existing (ongoing) credits in current bank': 'A31', 'Existing credits being paid duly': 'A32', 'Delay in paying credits in the past': 'A33', 'Critical Account': 'A34'}, inplace=True)
-        input_df['Attribute4'].replace({'Car (new)': 'A40', 'Car(used)': 'A41', 'Furniture/Equipment': 'A42', 'Radio/television': 'A43', 'Other appliances': 'A44', 'Repairs': 'A45', 'Education': 'A46', 'Vacation': 'A47', 'Retraining': 'A48', 'Business': 'A49', 'Other reason': 'A410'}, inplace=True)
-        input_df['Attribute6'].replace({'Less than £1000': 'A61', 'Between £1000 and £5000': 'A62', 'Between £5000 and £10000': 'A63', 'Greater than £10000': 'A64', 'No Savings Account': 'A65'}, inplace=True)    
-        input_df['Attribute7'].replace({'Unemployed': 'A71', '< 1 year': 'A72', '< 4 years and >= 1 year': 'A73', '< 7 years and >= 4 years': 'A74', 'more than 7 years': 'A75'}, inplace=True)
-        input_df['Attribute9'].replace({'Male - divorced/separated': 'A91', 'Female - divorced/separated/married': 'A92', 'Male - single': 'A93', 'Male - married/widowed': 'A94', 'Female - single': 'A95'}, inplace=True)
-        input_df['Attribute10'].replace({'None': 'A101', 'Co-applicant': 'A102', 'Guarantor': 'A103'}, inplace=True)
-        input_df['Attribute12'].replace({'Real Estate': 'A121', 'savings agreement/ life insurance': 'A122', 'Car or other': 'A123', 'No Collateral': 'A124'}, inplace=True)
-        input_df['Attribute14'].replace({'Bank': 'A141', 'Stores': 'A142', 'None': 'A143'}, inplace=True)
-        input_df['Attribute15'].replace({'Rent': 'A151', 'Own': 'A152', 'other': 'A153'}, inplace=True)
-        input_df['Attribute17'].replace({'unemployed/ unskilled  - non-resident': 'A171', 'unskilled - resident': 'A172', 'skilled employee / official': 'A173', 'management/ self-employed/highly qualified employee/ officer': 'A174'}, inplace=True)
-        input_df['Attribute19'].replace({'Yes': 'A192', 'No': 'A191'}, inplace=True)
-        input_df['Attribute20'].replace({'Yes': 'A201', 'No': 'A202'}, inplace=True)
-        
+   
+    input_df = pd.DataFrame({"Attribute1" : [Attribute1], "Attribute2" : [Attribute2], "Attribute3" : [Attribute3], "Attribute4" : [Attribute4], "Attribute5" : [Attribute5], "Attribute6" : [Attribute6], "Attribute7" : [Attribute7], "Attribute8" : [Attribute8], "Attribute9" : [Attribute9], "Attribute10" : [Attribute10], "Attribute11" : [Attribute11], "Attribute12" : [Attribute12], "Attribute13" : [Attribute13], "Attribute14" : [Attribute14], "Attribute15": [Attribute15], "Attribute16" : [Attribute16], "Attribute17" : [Attribute17], "Attribute18" : [Attribute18], "Attribute19" : [Attribute19], "Attribute20" : [Attribute20]})
+    input_df['Attribute1'].replace({'less than £0': 'A11', 'between £0 and £150': 'A12', 'greater than £150': 'A13','no existing checking account': 'A14'}, inplace=True)
+    input_df['Attribute3'].replace({'No existing (ongoing) credits anywhere': 'A30', 'No existing (ongoing) credits in current bank': 'A31', 'Existing credits being paid duly': 'A32', 'Delay in paying credits in the past': 'A33', 'Critical Account': 'A34'}, inplace=True)
+    input_df['Attribute4'].replace({'Car (new)': 'A40', 'Car(used)': 'A41', 'Furniture/Equipment': 'A42', 'Radio/television': 'A43', 'Other appliances': 'A44', 'Repairs': 'A45', 'Education': 'A46', 'Vacation': 'A47', 'Retraining': 'A48', 'Business': 'A49', 'Other reason': 'A410'}, inplace=True)
+    input_df['Attribute6'].replace({'Less than £1000': 'A61', 'Between £1000 and £5000': 'A62', 'Between £5000 and £10000': 'A63', 'Greater than £10000': 'A64', 'No Savings Account': 'A65'}, inplace=True)    
+    input_df['Attribute7'].replace({'Unemployed': 'A71', '< 1 year': 'A72', '< 4 years and >= 1 year': 'A73', '< 7 years and >= 4 years': 'A74', 'more than 7 years': 'A75'}, inplace=True)
+    input_df['Attribute9'].replace({'Male - divorced/separated': 'A91', 'Female - divorced/separated/married': 'A92', 'Male - single': 'A93', 'Male - married/widowed': 'A94', 'Female - single': 'A95'}, inplace=True)
+    input_df['Attribute10'].replace({'None': 'A101', 'Co-applicant': 'A102', 'Guarantor': 'A103'}, inplace=True)
+    input_df['Attribute12'].replace({'Real Estate': 'A121', 'savings agreement/ life insurance': 'A122', 'Car or other': 'A123', 'No Collateral': 'A124'}, inplace=True)
+    input_df['Attribute14'].replace({'Bank': 'A141', 'Stores': 'A142', 'None': 'A143'}, inplace=True)
+    input_df['Attribute15'].replace({'Rent': 'A151', 'Own': 'A152', 'other': 'A153'}, inplace=True)
+    input_df['Attribute17'].replace({'unemployed/ unskilled  - non-resident': 'A171', 'unskilled - resident': 'A172', 'skilled employee / official': 'A173', 'management/ self-employed/highly qualified employee/ officer': 'A174'}, inplace=True)
+    input_df['Attribute19'].replace({'Yes': 'A192', 'No': 'A191'}, inplace=True)
+    input_df['Attribute20'].replace({'Yes': 'A201', 'No': 'A202'}, inplace=True)
+    
 
 
 
