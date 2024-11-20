@@ -3,6 +3,7 @@ import streamlit as st
 st.title('💳 Credit risk checker')
 
 st.info('This program uses machine learning to check for credit risk')
+import plotly.graph_objects as go
 
 from ucimlrepo import fetch_ucirepo
 import pandas as pd
