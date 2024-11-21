@@ -4,7 +4,7 @@ st.title('💳 Credit risk checker')
 
 st.info('👈 Please fill your profile in the sidebar')
 
-st.expander('⚠️PLEASE READ BEFORE PROCEEDING'):
+st.expander('⚠️PLEASE READ BEFORE PROCEEDING')
 expander.write('For Testing Purposes Only: This app is a prototype designed for testing and educational purposes. The results provided should not be used for any official or financial decision-making.')
 
 expander.write('Model Accuracy vs. Data Limitations: While the underlying deep learning model achieves a high accuracy of 83% (as documented in my dissertation), it was trained on outdated data sourced from the UCI Machine Learning Repository. This limits its ability to fully reflect current real-world credit risk scenarios.')
