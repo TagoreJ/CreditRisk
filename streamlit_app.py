@@ -411,41 +411,41 @@ with st.sidebar:
 
 
 
-if st.button('Build Profile', use_container_width = True):
-        if input_df.isnull().values.any():
-            st.warning('⚠️ Please fill out the form in its entirety')
-        else:
+if st.button('Train model'):
+    if input_df.isnull().values.any():
+        st.warning('⚠️ Please fill out the form in its entirety')
+    else:
+        
+        st.write(f'Your probability of default is {prob:.1f} %')
+        gauge(
+        gVal=prob/100,           # The value to display on the gauge
+        gMode='gauge+number', # Display mode ('gauge+number', 'gauge', 'number')
+        gSize="MED",         # Size of the gauge visualization
+        gTheme="Black",       # Theme color for text and gauge labels
+        grLow=0.3,            # Low threshold for range
+        grMid=0.7,            # Mid threshold for range
+        gcLow='#1B8720',      # Color for low range
+        gcMid='#FF9400',      # Color for mid range
+        gcHigh='#FF1708',     # Color for high range
+        arBot=0,              # Minimum value on the gauge
+        arTop=1,              # Maximum value on the gauge
+        sFix="%",             # Suffix to append to the value (e.g., '%')
+    )
+    
+        st.divider()
+    
+        if prob <= 10:
+            st.write('The predicted credit default risk is very low, indicating a highly trustworthy financial profile. This borrower demonstrates consistent financial behavior and stability, making them an excellent candidate for credit approvals with favorable terms.')
+        elif prob >10 and prob<=30:
+            st.write('The predicted credit default risk is low, suggesting that the borrower has a strong ability to meet their financial obligations. While there may be a few minor concerns, they generally pose a low likelihood of default.')
+        elif prob > 30 and prob <= 70:
+            st.write('The predicted credit default risk is moderate, indicating a balanced credit profile. While there are some notable risk factors, the borrower has the potential to manage their financial obligations with appropriate measures.')
+        elif prob > 70 and prob <= 90:
+            st.write('The predicted credit default risk is high, highlighting notable financial challenges. There are several risk indicators that increase the probability of default, suggesting the need for caution and potential risk mitigation strategies.')
+        elif prob>90:
+            st.write('The predicted credit default risk is very high, signaling a highly vulnerable financial profile. The borrower demonstrates severe risk factors that make credit extension highly inadvisable without substantial safeguards.')
             
-            st.write(f'Your probability of default is {prob:.1f} %')
-            gauge(
-            gVal=prob/100,           # The value to display on the gauge
-            gMode='gauge+number', # Display mode ('gauge+number', 'gauge', 'number')
-            gSize="MED",         # Size of the gauge visualization
-            gTheme="Black",       # Theme color for text and gauge labels
-            grLow=0.3,            # Low threshold for range
-            grMid=0.7,            # Mid threshold for range
-            gcLow='#1B8720',      # Color for low range
-            gcMid='#FF9400',      # Color for mid range
-            gcHigh='#FF1708',     # Color for high range
-            arBot=0,              # Minimum value on the gauge
-            arTop=1,              # Maximum value on the gauge
-            sFix="%",             # Suffix to append to the value (e.g., '%')
-        )
+    
         
-            st.divider()
-        
-            if prob <= 10:
-                st.write('The predicted credit default risk is very low, indicating a highly trustworthy financial profile. This borrower demonstrates consistent financial behavior and stability, making them an excellent candidate for credit approvals with favorable terms.')
-            elif prob >10 and prob<=30:
-                st.write('The predicted credit default risk is low, suggesting that the borrower has a strong ability to meet their financial obligations. While there may be a few minor concerns, they generally pose a low likelihood of default.')
-            elif prob > 30 and prob <= 70:
-                st.write('The predicted credit default risk is moderate, indicating a balanced credit profile. While there are some notable risk factors, the borrower has the potential to manage their financial obligations with appropriate measures.')
-            elif prob > 70 and prob <= 90:
-                st.write('The predicted credit default risk is high, highlighting notable financial challenges. There are several risk indicators that increase the probability of default, suggesting the need for caution and potential risk mitigation strategies.')
-            elif prob>90:
-                st.write('The predicted credit default risk is very high, signaling a highly vulnerable financial profile. The borrower demonstrates severe risk factors that make credit extension highly inadvisable without substantial safeguards.')
-                
-        
-            
-        
-           
+    
+       
