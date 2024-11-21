@@ -415,7 +415,7 @@ if st.button('Train model'):
     if input_df.isnull().values.any():
         st.warning('⚠️ Please fill out the form in its entirety')
     else:
-        
+        prob = get_probability(input_df)
         st.write(f'Your probability of default is {prob:.1f} %')
         gauge(
         gVal=prob/100,           # The value to display on the gauge
