@@ -1,12 +1,5 @@
 import streamlit as st
-st.markdown("""
-# Welcome to the Credit Risk Checker App! 💳
 
-This application helps evaluate credit risk using a trained neural network. 
-Please fill out your profile in the sidebar to get started.
-
-**Note**: Ensure your details are accurate for better predictions.
-""")
 st.title('💳 Credit risk checker')
 
 st.info('👈 Please fill your profile in the sidebar')
