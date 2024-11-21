@@ -442,7 +442,7 @@ st.header('Know more...')
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    with st.container:
+    with st.container():
         st.write('Visit my portfolio')
         st.image('IMG_0990-modified.png')
     
