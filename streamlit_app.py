@@ -340,13 +340,6 @@ def get_probability(credentials_df):
 
     return probability*100
 
-@st.dialog("Cast your vote")
-def vote(item):
-    st.write(f"Why is {item} your favorite?")
-    reason = st.text_input("Because...")
-    if st.button("I agree"):
-        st.rerun()
-
 
 with st.sidebar:
     st.header('Input Features')
@@ -360,7 +353,7 @@ with st.sidebar:
     Attribute8 = st.number_input('Installment rate in percentage to disposable income', value=0)
     Attribute9 = st.selectbox('Personal status and Sex', ('Male - divorced/separated', 'Female - divorced/separated/married', 'Male - single', 'Male - married/widowed', 'Female - single'),index=None, placeholder='Select one...')
     Attribute10 = st.selectbox('Other debtors/guarantors', ('None', 'Co-applicant', 'Guarantor'),index=None, placeholder='Select one...')
-    Attribute11 = st.number_input('Present residence since', 0, 4)
+    Attribute11 = st.number_input('Present residence since', 0, 200)
     Attribute12 = st.selectbox('Collateral', ('Real Estate', 'savings agreement/ life insurance', 'Car or other', 'No Collateral'),index=None, placeholder='Select one...')
     Attribute13 = st.number_input("Age (in years)",step=1)
     Attribute14 = st.selectbox('Other Installment plans', ('Bank', 'Stores', 'None'),index=None, placeholder='Select one...')
@@ -397,7 +390,7 @@ with st.sidebar:
 
 
 
-if st.button('Train model'):
+if st.button('Run model'):
     if input_df.isnull().values.any():
         st.warning('⚠️ Please fill out the form in its entirety')
     else:
@@ -430,10 +423,6 @@ if st.button('Train model'):
             st.write('The predicted credit default risk is high, highlighting notable financial challenges. There are several risk indicators that increase the probability of default, suggesting the need for caution and potential risk mitigation strategies.')
         elif prob>90:
             st.write('The predicted credit default risk is very high, signaling a highly vulnerable financial profile. The borrower demonstrates severe risk factors that make credit extension highly inadvisable without substantial safeguards.')
-            
-        st.divider()
-
-        st.write('Thannk you for using this app 😁')
 
 st.divider()
 
@@ -443,9 +432,15 @@ col1, col2, col3 = st.columns(3)
 
 with col1:
     with st.container(border=True):
-        st.write('[Visit my Portfolio](https://www.ekalavyaprasad.com)')
+        st.write('🌐 [Visit my Portfolio](https://www.ekalavyaprasad.com)')
+
+with col2:
+    with st.container(border=True):
+        st.write('📝 [Source code](https://github.com/EkalavyaPrasad/CreditRiskCheck)')
     
-    
+with col3:
+    with st.container(border=True):
+        st.write('🧾 [More about the Bankend](https://drive.google.com/file/d/1hFjYLqJE65JJDpiKgUEy4U6RJ6DHPKVC/view?usp=sharing)')
 
 
         
