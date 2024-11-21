@@ -437,12 +437,13 @@ if st.button('Train model'):
 
 st.divider()
 
-st.write(Know more...)
+st.write('Know more...')
 
 col1, col2, col3 = st.columns(3)
 
 with col1:
     st.header('Visit my portfolio')
+    st.image('IMG_0990-modified.png')
     
     
 
