@@ -336,30 +336,12 @@ def get_probability(credentials_df):
 
     return probability*100
 
-my_credentials = {
-    'Attribute1': ['A13'],
-    'Attribute2': [36],
-    'Attribute3': ['A32'],
-    'Attribute4': ['A46'],
-    'Attribute5': [4500],
-    'Attribute6': ['A63'],
-    'Attribute7': ['A75'],
-    'Attribute8': [0.0005],
-    'Attribute9': ['A94'],
-    'Attribute10': ['A103'],
-    'Attribute11': [5],
-    'Attribute12': ['A121'],
-    'Attribute13': [22],
-    'Attribute14': ['A141'],
-    'Attribute15': ['A152'],
-    'Attribute16': [3],
-    'Attribute17': ['A172'],
-    'Attribute18': [2],
-    'Attribute19': ['A192'],
-    'Attribute20': ['A202'],
-}
-
-my_credentials_df = pd.DataFrame(my_credentials)
+@st.dialog("Cast your vote")
+def vote(item):
+    st.write(f"Why is {item} your favorite?")
+    reason = st.text_input("Because...")
+    if st.button("I agree"):
+        st.rerun()
 
 
 with st.sidebar:
@@ -445,7 +427,11 @@ if st.button('Train model'):
         elif prob>90:
             st.write('The predicted credit default risk is very high, signaling a highly vulnerable financial profile. The borrower demonstrates severe risk factors that make credit extension highly inadvisable without substantial safeguards.')
             
-    
+        st.divider()
+
+        st.write('Thannk you for using this app 😁')
+        
+        
         
     
        
