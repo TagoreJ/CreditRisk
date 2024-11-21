@@ -4,6 +4,18 @@ st.title('💳 Credit risk checker')
 
 st.info('👈 Please fill your profile in the sidebar')
 
+st.expander('⚠️PLEASE READ BEFORE PROCEEDING'):
+    st.write('For Testing Purposes Only: This app is a prototype designed for testing and educational purposes. The results provided should not be used for any official or financial decision-making.')
+
+    st.write('Model Accuracy vs. Data Limitations: While the underlying deep learning model achieves a high accuracy of 83% (as documented in my dissertation), it was trained on outdated data sourced from the UCI Machine Learning Repository. This limits its ability to fully reflect current real-world credit risk scenarios.')
+
+    st.write('Not Financial Advice: The apps outputs do not constitute financial advice. Please consult a certified financial professional for decisions regarding your credit or finances.')
+
+    st.write('Learn More: For more detailed information about the app backend and methodology, you can access my dissertation.')
+
+
+
+
 from ucimlrepo import fetch_ucirepo 
 import pandas as pd
 import numpy as np
@@ -24,11 +36,6 @@ statlog_german_credit_data = fetch_ucirepo(id=144)
 # Data (as pandas dataframes) 
 features = statlog_german_credit_data.data.features 
 targets = statlog_german_credit_data.data.targets -1
-
-amount = features['Attribute5']
-
-plt.hist(amount, bins=30)
-plt.show()
 
 import plotly.graph_objects as go
 
