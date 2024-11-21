@@ -434,6 +434,19 @@ if st.button('Train model'):
         st.divider()
 
         st.write('Thannk you for using this app 😁')
+
+st.divider()
+
+st.write(Know more...)
+
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.header('Visit my portfolio')
+    
+    
+
+
         
         
         
