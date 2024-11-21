@@ -411,10 +411,9 @@ with st.sidebar:
 
 
 
-if st.button('Train Model'): 
-    prob = get_probability(input_df)
-    if np.isnan(prob):
-        st.warning('⚠️ Please fill out the form in its entirety')
+if st.button('Build Profile', use_container_width = True):
+        if input_df.isnull().values.any():
+            st.warning('⚠️ Please fill out the form in its entirety')
     else:
         
         st.write(f'Your probability of default is {prob:.1f} %')
