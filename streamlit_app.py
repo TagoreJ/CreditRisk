@@ -402,7 +402,7 @@ with st.sidebar:
     input_df['Attribute20'].replace({'Yes': 'A201', 'No': 'A202'}, inplace=True)
 
     if st.button('Build Profile', use_container_width = True):
-        if df.isnull().values.any():
+        if input_df.isnull().values.any():
             st.warning('⚠️ Please fill out the form in its entirety')
         else:
             st.info('Profile built successfully, you can close the sidebar')
