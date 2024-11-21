@@ -436,11 +436,11 @@ with col1:
 
 with col2:
     with st.container(border=True):
-        st.write('📝 [Source code](https://github.com/EkalavyaPrasad/CreditRiskCheck)')
+        st.write('📝 [Source Code](https://github.com/EkalavyaPrasad/CreditRiskCheck)')
     
 with col3:
     with st.container(border=True):
-        st.write('🧾 [More about the Bankend](https://drive.google.com/file/d/1hFjYLqJE65JJDpiKgUEy4U6RJ6DHPKVC/view?usp=sharing)')
+        st.write('🧾 [Connect with me](www.linkedin.com/in/ekalavya-prasad)')
 
 
         
