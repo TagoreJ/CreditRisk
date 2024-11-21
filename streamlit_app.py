@@ -11,11 +11,8 @@ with st.expander('⚠️PLEASE READ BEFORE PROCEEDING'):
     
     st.write('Not Financial Advice: The apps outputs do not constitute financial advice. Please consult a certified financial professional for decisions regarding your credit or finances.')
     
-    st.write('Learn More: For more detailed information about the app backend and methodology, you can access my dissertation.')
+    st.write('Learn More: For more detailed information about the app backend and methodology, you can access my dissertation [here](https://drive.google.com/file/d/1hFjYLqJE65JJDpiKgUEy4U6RJ6DHPKVC/view?usp=sharing).')
     
-
-
-
 from ucimlrepo import fetch_ucirepo 
 import pandas as pd
 import numpy as np
