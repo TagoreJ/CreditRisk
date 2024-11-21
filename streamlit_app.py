@@ -443,7 +443,7 @@ col1, col2, col3 = st.columns(3)
 
 with col1:
     with st.container(border=True):
-        st.write(['Visit my portfolio'](https://www.ekalavyaprasad.com))
+        st.write([Visit my portfolio](https://www.ekalavyaprasad.com))
     
     
 
