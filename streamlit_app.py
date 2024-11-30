@@ -440,7 +440,7 @@ with col2:
     
 with col3:
     with st.container(border=True):
-        st.write('🔗 [Connect with me](www.linkedin.com/in/ekalavya-prasad)')
+        st.write('🔗 [Connect with me](https://www.linkedin.com/in/ekalavya-prasad)')
 
 
         
